@@ -16,7 +16,7 @@ export const getNumberOfDaysInMonth = (
 }
 
 export const getWeekday = (number: number, local: calendarLocal) => {
-  const weekStartIndex = local === 'fa' ? 1 : 0
+  const weekStartIndex = local === 'fa' ? 1 : 1
   const { WEEK_DAY_SHORT } = useLangOption(local)
   const weekDay = WEEK_DAY_SHORT[number]
   return {

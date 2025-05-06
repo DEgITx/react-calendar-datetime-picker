@@ -95,16 +95,16 @@ export const LOCAL_CONSTANT = {
   },
   en: {
     WEEK_DAY: [
-      'Sunday',
       'Monday',
-      'Thursday',
+      'Tuesday',
       'Wednesday',
       'Thursday',
       'Friday',
-      'Saturday'
+      'Saturday',
+      'Sunday'
     ],
 
-    WEEK_DAY_SHORT: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    WEEK_DAY_SHORT: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
     MONTHS: [
       'January',
       'February',
@@ -135,11 +135,6 @@ export const LOCAL_CONSTANT = {
     ],
     WEEK_DAYS: [
       {
-        name: 'Sunday',
-        short: 'Su',
-        isWeekend: true
-      },
-      {
         name: 'Monday',
         short: 'Mo'
       },
@@ -162,6 +157,11 @@ export const LOCAL_CONSTANT = {
       {
         name: 'Saturday',
         short: 'Sa',
+        isWeekend: true
+      },
+      {
+        name: 'Sunday',
+        short: 'Su',
         isWeekend: true
       }
     ],

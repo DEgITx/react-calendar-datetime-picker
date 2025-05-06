@@ -157,11 +157,11 @@ export const DaysView: FC<IDaysProps> = React.memo(
         if (
           selectedDayState &&
           genFullDay(newDate.year, newDate.month, newDate.day) ===
-            genFullDay(
-              (selectedDayState as IDay)!.year,
-              (selectedDayState as IDay)!.month,
-              (selectedDayState as IDay)!.day
-            )
+          genFullDay(
+            (selectedDayState as IDay)!.year,
+            (selectedDayState as IDay)!.month,
+            (selectedDayState as IDay)!.day
+          )
         ) {
           removeSelectedDay()
         } else {
@@ -216,7 +216,7 @@ export const DaysView: FC<IDaysProps> = React.memo(
       if (
         type === 'single' &&
         day.timeStamp ===
-          getDateTimeStamp({ ...(selectedDayState as IDay) }, local)
+        getDateTimeStamp({ ...(selectedDayState as IDay) }, local)
       ) {
         classes += ' is-selected-day'
       }
@@ -225,7 +225,7 @@ export const DaysView: FC<IDaysProps> = React.memo(
         type === 'range' &&
         (selectedDayState as IRange).from &&
         day.timeStamp ===
-          getDateTimeStamp({ ...(selectedDayState as IRange).from! }, local)
+        getDateTimeStamp({ ...(selectedDayState as IRange).from! }, local)
       ) {
         classes += ' is-selected-day-from'
       }
@@ -233,7 +233,7 @@ export const DaysView: FC<IDaysProps> = React.memo(
         type === 'range' &&
         (selectedDayState as IRange)?.to &&
         day.timeStamp ===
-          getDateTimeStamp({ ...(selectedDayState as IRange).to! }, local)
+        getDateTimeStamp({ ...(selectedDayState as IRange).to! }, local)
       ) {
         classes += ' is-selected-day-to'
       }
@@ -259,7 +259,8 @@ export const DaysView: FC<IDaysProps> = React.memo(
           classes += ' is_weekends'
         } else if (
           local === 'en' &&
-          (index + daysForPreviousMonth.length) % 7 === 0
+          ((index + daysForPreviousMonth.length) % 7 === 5 ||
+            (index + daysForPreviousMonth.length) % 7 === 6)
         ) {
           classes += ' is_weekends'
         }
@@ -305,11 +306,10 @@ export const DaysView: FC<IDaysProps> = React.memo(
           daysForPreviousMonth.map((day, index) => (
             <li
               key={day.dayOfMonth}
-              className={`daysList-day is-disabled is-prev-month ${
-                daysForPreviousMonth.length - 1 === index
-                  ? 'is-border-right-0'
-                  : ''
-              }`}
+              className={`daysList-day is-disabled is-prev-month ${daysForPreviousMonth.length - 1 === index
+                ? 'is-border-right-0'
+                : ''
+                }`}
             >
               {local === 'fa'
                 ? toPersianNumber(day.dayOfMonth)
@@ -331,9 +331,8 @@ export const DaysView: FC<IDaysProps> = React.memo(
           daysForNextMonth.map((day, index) => (
             <li
               key={day.dayOfMonth}
-              className={`daysList-day is-disabled is-next-month ${
-                index === 0 ? 'is-border-left-0' : ''
-              }`}
+              className={`daysList-day is-disabled is-next-month ${index === 0 ? 'is-border-left-0' : ''
+                }`}
             >
               {local === 'fa'
                 ? toPersianNumber(day.dayOfMonth)
